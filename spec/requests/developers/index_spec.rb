@@ -21,7 +21,7 @@ RSpec.describe 'Developers', type: :request do
     context 'with params' do
       context 'with :name' do
         context 'when there are developers found' do
-          let(:developers){ create_list :developer, Faker::Number.between(1, 3) }
+          let(:developers){ create_list :developer, Faker::Number.between(from: 1, to: 3) }
           let(:name) { developers.first.name }
           let(:params){ {name: name} }
 
@@ -40,7 +40,7 @@ RSpec.describe 'Developers', type: :request do
         end
 
         context 'when no developer is found' do
-          let(:developers) { create_list :developer, Faker::Number.between(1, 3) }
+          let(:developers) { create_list :developer, Faker::Number.between(from: 1, to: 3) }
           let(:name) { Faker::Name.name }
           let(:params){ {name: name} }
 
@@ -56,7 +56,7 @@ RSpec.describe 'Developers', type: :request do
 
       context 'with :age' do
         context 'when there are developers found' do
-          let(:developers){ create_list :developer, Faker::Number.between(1, 3) }
+          let(:developers){ create_list :developer, Faker::Number.between(from: 1, to: 3) }
           let(:age) { developers.first.age }
           let(:params){ {age: age} }
 
@@ -75,7 +75,7 @@ RSpec.describe 'Developers', type: :request do
         end
 
         context 'when no developer is found' do
-          let(:developers) { create_list :developer, Faker::Number.between(1, 3) }
+          let(:developers) { create_list :developer, Faker::Number.between(from: 1, to: 3) }
           let(:age) { Faker::Number.digit }
           let(:params){ {age: age} }
 

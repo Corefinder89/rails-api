@@ -6,7 +6,7 @@ RSpec.shared_examples_for 'controller with pageable request params' do
   context 'with request params' do
     context 'with :page' do
       context 'when it is set' do
-        let(:page){ Faker::Number.between(1, 3) }
+        let(:page){ Faker::Number.between(from: 1, to: 3) }
         let(:params){ {page: page} }
 
         it 'does not set a default value' do
@@ -29,7 +29,7 @@ RSpec.shared_examples_for 'controller with pageable request params' do
 
     context 'with :per_page' do
       context 'when it is set' do
-        let(:per_page){ Faker::Number.between(1, 3) }
+        let(:per_page){ Faker::Number.between(from: 1, to: 3) }
         let(:params){ {per_page: per_page} }
 
         it 'does not set a default value' do
